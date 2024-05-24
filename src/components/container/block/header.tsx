@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between py-2 px-5 md:px-10 lg:px-14 xl:px-16 2xl:px-20">
+    <header className="flex items-center justify-between py-4 px-5 md:px-10 lg:px-14 xl:px-16 2xl:px-20">
       <Link to={"/"}>
         <div className="flex items-center space-x-2">
           <img
