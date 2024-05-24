@@ -11,6 +11,12 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -22,5 +28,9 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": [
+    "./node_modules",
+    "./tests"
+]
 }
