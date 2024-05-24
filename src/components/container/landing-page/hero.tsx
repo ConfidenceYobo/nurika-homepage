@@ -1,10 +1,13 @@
 import avatars from "@/assets/landing-page/avatars.svg";
+import avatarsPNG from "@/assets/landing-page/avatars.png";
 import heroImg from "@/assets/landing-page/hero.svg";
 import wallet from "@/assets/template/wallet.svg";
 import { Button } from "@/components/ui/button";
 import { WalletDialog } from "../dialog/wallet";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Hero() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
     <div className="flex items-center justify-between md:h-[100vh] hero-bg px-5 md:px-10 lg:px-14 xl:px-16 2xl:px-20">
       <div className="bg-cover space-y-7 h-full w-full flex justify-center items-start flex-col">
@@ -24,7 +27,11 @@ export default function Hero() {
           }
         />
         <div className="flex items-center space-x-3">
-          <img src={avatars} alt="Avatars" className="w-24 md:w-32" />
+          <img
+            src={isDesktop ? avatars : avatarsPNG}
+            alt="Avatars"
+            className="w-24 md:w-32"
+          />
           <div>
             <h3 className="font-bold text-2xl sm:text-3xl">60k+</h3>
             <p className="text-gray-500 text-sm">Community members</p>
