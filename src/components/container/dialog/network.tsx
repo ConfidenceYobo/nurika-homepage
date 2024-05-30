@@ -14,13 +14,13 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
-import { toast } from "sonner";
 
 import bnb from "@/assets/wallet/bnb.png";
 import celo from "@/assets/wallet/celo.png";
 import matic from "@/assets/wallet/matic.png";
+import { MINTING_PAGES } from "@/constants";
 
-export function WalletDialog({ trigger }: { trigger: React.ReactNode }) {
+export function NetworkDialog({ trigger }: { trigger: React.ReactNode }) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -31,10 +31,10 @@ export function WalletDialog({ trigger }: { trigger: React.ReactNode }) {
         <DialogContent className="sm:max-w-[1000px] bg-secondary-base border-white/5">
           <DialogHeader>
             <DialogTitle className="text-4xl font-semibold">
-              Select a wallet
+              Select a network
             </DialogTitle>
           </DialogHeader>
-          <WalletOptions />
+          <NetworkOptions />
         </DialogContent>
       </Dialog>
     );
@@ -44,8 +44,8 @@ export function WalletDialog({ trigger }: { trigger: React.ReactNode }) {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>{trigger}</DrawerTrigger>
       <DrawerContent className="bg-secondary-base border-white/5 py-5 space-y-5">
-        <h1 className="text-center text-2xl font-semibold">Select a wallet</h1>
-        <WalletOptionsMobile />
+        <h1 className="text-center text-2xl font-semibold">Select a network</h1>
+        <NetworkOptionsMobile />
       </DrawerContent>
     </Drawer>
   );
@@ -54,6 +54,7 @@ export function WalletDialog({ trigger }: { trigger: React.ReactNode }) {
 const options = [
   {
     title: "BNB",
+    url: MINTING_PAGES["bsc"],
     description:
       "Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide.",
     popular: true,
@@ -61,6 +62,7 @@ const options = [
   },
   {
     title: "Matic",
+    url: MINTING_PAGES["matic"],
     description:
       "Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide.",
     popular: false,
@@ -68,6 +70,7 @@ const options = [
   },
   {
     title: "Celo",
+    url: MINTING_PAGES["celo"],
     description:
       "Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide.",
     popular: false,
@@ -75,7 +78,7 @@ const options = [
   },
 ];
 
-function WalletOptions() {
+function NetworkOptions() {
   return (
     <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10 items-start mx-auto">
       {options.map((option, index) => (
@@ -83,7 +86,7 @@ function WalletOptions() {
           className="flex flex-col space-y-4 bg-white/5 rounded-2xl p-5 max-w-xs items-start text-start border-white/10 border"
           key={index}
           onMouseDown={() => {
-            toast.success(`${option.title} selected successfully`);
+            window.location.href = option.url;
           }}
         >
           <div className="flex justify-between items-center w-full">
@@ -106,7 +109,7 @@ function WalletOptions() {
   );
 }
 
-function WalletOptionsMobile() {
+function NetworkOptionsMobile() {
   return (
     <div className="space-y-4">
       <Carousel className="w-full">
@@ -119,7 +122,7 @@ function WalletOptionsMobile() {
               <button
                 className="flex flex-col space-y-4 bg-white/5 rounded-2xl p-5 max-w-xs items-start text-start border-white/10 border"
                 onMouseDown={() => {
-                  toast.success(`${option.title} selected successfully`);
+                  window.location.href = option.url;
                 }}
               >
                 <div className="flex justify-between items-center w-full">

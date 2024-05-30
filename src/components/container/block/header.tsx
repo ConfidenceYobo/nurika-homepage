@@ -1,6 +1,6 @@
 import { Button } from "../../ui/button";
 import wallet from "@/assets/template/wallet.svg";
-import { WalletDialog } from "../dialog/wallet";
+import { NetworkDialog } from "../dialog/network";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -16,11 +16,11 @@ export default function Header() {
         </div>
       </Link>
 
-      <WalletDialog
+      <NetworkDialog
         trigger={
           <Button className="space-x-2">
-            <img src={wallet} alt="wallet" className="w-4 h-4" />{" "}
-            <span>Connect Wallet</span>
+            <img src={wallet} alt="network" className="w-4 h-4" />{" "}
+            <span>Launch Dapp</span>
           </Button>
         }
       />

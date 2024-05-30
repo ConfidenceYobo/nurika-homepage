@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { WalletDialog } from "../dialog/wallet";
+import { NetworkDialog } from "../dialog/network";
 
 export default function CTA() {
   return (
@@ -9,7 +9,7 @@ export default function CTA() {
       <p className="text-white/50">
         Invest and manage all your NFTs at one place.
       </p>
-      <WalletDialog
+      <NetworkDialog
         trigger={
           <Button className="w-full md:w-auto space-x-2">
             <span>Start Minting</span>

@@ -8,7 +8,7 @@ import threeMobile from "@/assets/landing-page/showcase/art03-mobile.png";
 import fourMobile from "@/assets/landing-page/showcase/art04-mobile.png";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { WalletDialog } from "../dialog/wallet";
+import { NetworkDialog } from "../dialog/network";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 const items = [
@@ -64,7 +64,7 @@ export default function ShowCase() {
         ))}
       </div>
 
-      <WalletDialog
+      <NetworkDialog
         trigger={<Button className="w-full sm:w-auto">Start Minting</Button>}
       />
     </div>

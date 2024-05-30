@@ -3,7 +3,7 @@ import avatarsPNG from "@/assets/landing-page/avatars.png";
 import heroImg from "@/assets/landing-page/hero.svg";
 import wallet from "@/assets/template/wallet.svg";
 import { Button } from "@/components/ui/button";
-import { WalletDialog } from "../dialog/wallet";
+import { NetworkDialog } from "../dialog/network";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Hero() {
@@ -18,10 +18,10 @@ export default function Hero() {
           A collection of 10000 NFTs curated with the utmost attention to
           details, giving you all the feels of the Nuriverse
         </p>
-        <WalletDialog
+        <NetworkDialog
           trigger={
             <Button className="space-x-2 w-full md:w-auto">
-              <img src={wallet} alt="wallet" className="w-4 h-4" />{" "}
+              <img src={wallet} alt="network" className="w-4 h-4" />{" "}
               <span>Start Minting</span>
             </Button>
           }
