@@ -9,9 +9,9 @@ const MINTING_PAGE_URLS: Environments = {
         matic: 'http://localhost:3003'
     },
     production: {
-        celo: 'http://celo.nurika.com',
-        bsc: 'http://bsc.nurika.com',
-        matic: 'http://polygon.nurika.com'
+        celo: 'https://nft-celo.nurika.health',
+        bsc: 'https://nft-bsc.nurika.health',
+        matic: 'https://nft-polygon.nurika.health'
     },
     test: {
         celo: 'http://localhost:3001',
