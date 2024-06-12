@@ -1,13 +1,14 @@
-import active from "@/assets/mint-page/checkout/active.png";
-import hydrated from "@/assets/mint-page/checkout/hydrated.png";
-import runner from "@/assets/mint-page/checkout/runner.png";
-import walker from "@/assets/mint-page/checkout/walker.png";
-import jogger from "@/assets/mint-page/checkout/jogger.png";
 import { SelectedNFTTitle } from "./showcase";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SuccessDialog } from "../dialog/success";
+import active from "@/assets/landing-page/showcase/active.png";
+import hydrated from "@/assets/landing-page/showcase/hydrate.png";
+import runner from "@/assets/landing-page/showcase/runner.png";
+import walker from "@/assets/landing-page/showcase/walker.png";
+import jogger from "@/assets/landing-page/showcase/jogger.png";
+
 
 const selectedNFT = {
   Active: active,
@@ -23,8 +24,8 @@ export default function CheckoutForm() {
 
   return (
     <div className="flex flex-col md:flex-row justify-between space-y-5 md:space-y-0  md:space-x-5 items-start md:items-center">
-      <aside className="max-w-[500px]">
-        <img src={selectedNFTImage} alt="" />
+      <aside className="max-w-[500px] h-full">
+        <img src={selectedNFTImage} alt="" className="object-cover w-full h-full rounded" />
       </aside>
       <div className="space-y-5">
         <span>{title} #312</span>
@@ -44,7 +45,6 @@ export default function CheckoutForm() {
 
 function Counter() {
   const [counter, setCounter] = useState(1);
-  const [open, setOpen] = useState(false);
 
   return (
     <div className="space-y-5">
@@ -80,8 +80,6 @@ function Counter() {
       </div>
       <SuccessDialog
         trigger={<Button className="w-full md:w-auto md:px-10">Buy Now</Button>}
-        open={open}
-        setOpen={setOpen}
       />
     </div>
   );
