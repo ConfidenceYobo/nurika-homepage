@@ -2,13 +2,11 @@ import { SelectedNFTTitle } from "./showcase";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { SuccessDialog } from "../dialog/success";
 import active from "@/assets/landing-page/showcase/active.png";
 import hydrated from "@/assets/landing-page/showcase/hydrate.png";
 import runner from "@/assets/landing-page/showcase/runner.png";
 import walker from "@/assets/landing-page/showcase/walker.png";
 import jogger from "@/assets/landing-page/showcase/jogger.png";
-
 
 const selectedNFT = {
   Active: active,
@@ -25,7 +23,11 @@ export default function CheckoutForm() {
   return (
     <div className="flex flex-col md:flex-row justify-between space-y-5 md:space-y-0  md:space-x-5 items-start md:items-center">
       <aside className="max-w-[500px] h-full">
-        <img src={selectedNFTImage} alt="" className="object-cover w-full h-full rounded" />
+        <img
+          src={selectedNFTImage}
+          alt=""
+          className="object-cover w-full h-full rounded"
+        />
       </aside>
       <div className="space-y-5">
         <span>{title} #312</span>
@@ -78,9 +80,8 @@ function Counter() {
           </div>
         </div>
       </div>
-      <SuccessDialog
-        trigger={<Button className="w-full md:w-auto md:px-10">Buy Now</Button>}
-      />
+
+      <Button className="w-full md:w-auto md:px-10">Buy Now</Button>
     </div>
   );
 }
