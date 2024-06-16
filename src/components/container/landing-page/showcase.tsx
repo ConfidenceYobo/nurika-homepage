@@ -42,7 +42,7 @@ export default function ShowCase() {
           <div
             key={index}
             className={cn(
-              "bg-white/5 w-full sm:w-[300px] p-5 rounded-3xl flex flex-col justify-center items-center space-y-3 mx-auto",
+              "bg-white/5 w-full sm:w-[300px] p-5 rounded-3xl flex flex-col justify-center items-center space-y-3 mx-auto transition-all group",
               !isEven(index + 1) ? "sm:mt-10" : ""
             )}
             data-aos={!isEven(index + 1) ? "fade-up-right" : "fade-up-left"}
@@ -50,7 +50,7 @@ export default function ShowCase() {
             <img
               src={item.image}
               alt=""
-              className="rounded-2xl max-w-[250px] h-[300px] object-cover"
+              className="rounded-2xl max-w-[250px] h-[300px] object-cover group-hover:scale-105 transition-all"
             />
             <span className="text-xl font-bold">{item.title}</span>
           </div>
