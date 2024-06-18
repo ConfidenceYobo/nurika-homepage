@@ -51,6 +51,7 @@ export function NetworkDialog({ trigger }: { trigger: React.ReactNode }) {
   );
 }
 
+
 const options = [
   {
     title: "BNB",

@@ -15,7 +15,7 @@ export default function Hero() {
           Welcome to <br /> the Nuriverse
         </h1>
         <p className="max-w-sm text-xl font-normal text-white/70">
-          A collection of 10000 NFTs curated with the utmost attention to
+          A collection of 100,000 NFTs curated with the utmost attention to
           details, giving you all the feels of the Nuriverse
         </p>
         <NetworkDialog
